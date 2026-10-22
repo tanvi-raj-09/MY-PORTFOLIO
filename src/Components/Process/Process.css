@@ -172,6 +172,7 @@
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
+/* --- Tablet --- */
 @media (max-width: 1024px) {
   .process-page {
     height: 100%;
@@ -187,13 +188,29 @@
   .connector-line {
     top: 55px;
   }
+
+  .step-description {
+    max-width: 180px;
+  }
 }
 
+/* --- Small tablet --- */
 @media (max-width: 768px) {
   .process-page {
     height: 100%;
     min-height: 100vh;
     padding: 5vh 5vw 4vh 5vw;
+  }
+
+  .process-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 1.5vh;
+  }
+
+  .process-header .header-label {
+    letter-spacing: 0.16em;
   }
 
   .connector-line {
@@ -203,7 +220,7 @@
   .steps-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px 12px;
+    gap: 24px 16px;
     width: 100%;
   }
 
@@ -212,38 +229,56 @@
   }
 
   .step-circle {
-    width: 75px;
-    height: 75px;
-    font-size: 30px;
+    width: 82px;
+    height: 82px;
+    font-size: 32px;
+    border-width: 3px;
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-size: clamp(18px, 2.5vw, 24px);
+    margin: 6px 0;
+  }
+
+  .step-description {
+    font-size: clamp(11px, 1.5vw, 13px);
+    line-height: 1.5;
+    max-width: 170px;
+  }
+}
+
+/* --- Mobile phones --- */
+@media (max-width: 480px) {
+  .process-page {
+    padding: 4vh 4vw 3vh;
+  }
+
+  .process-header .header-title {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .steps-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+
+  .step-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
     border-width: 3px;
     margin-bottom: 8px;
   }
 
   .step-title {
-    font-size: 18px;
+    font-size: 17px;
     margin: 4px 0;
   }
 
   .step-description {
     font-size: 10.5px;
-    line-height: 1.4;
-    max-width: 160px;
-  }
-}
-
-@media (max-width: 600px) {
-  .process-page {
-    padding: 4vh 4vw;
-  }
-
-  .process-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 1vh;
-  }
-
-  .process-header .header-label {
-    letter-spacing: 0.15em;
+    line-height: 1.45;
+    max-width: 140px;
   }
 }

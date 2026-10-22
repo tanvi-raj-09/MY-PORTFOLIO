@@ -205,41 +205,83 @@
 /* =========================
    RESPONSIVE DESIGN
 ========================= */
+/* --- Tablet --- */
 @media (max-width: 1024px) {
   .work-page {
     padding: 6vh 5vw;
   }
 
   .work-card {
-    flex: 0 0 clamp(320px, 45vw, 420px);
-    height: clamp(360px, 42vh, 440px);
-  }
-}
-
-@media (max-width: 768px) {
-  .work-card {
-    flex: 0 0 clamp(290px, 70vw, 360px);
-    height: clamp(340px, 40vh, 400px);
-    padding: 25px;
+    flex: 0 0 clamp(310px, 42vw, 420px);
+    height: clamp(350px, 42vh, 440px);
   }
 
   .cards-container {
-    padding-right: 40vw;
+    padding-right: 30vw;
   }
 }
 
-@media (max-width: 600px) {
+/* --- Small tablet --- */
+@media (max-width: 768px) {
   .work-page {
-    padding: 40px 24px;
+    padding: 5vh 4vw;
   }
 
   .work-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 12px;
+    margin-bottom: 1.5vh;
   }
 
   .work-header .header-label {
-    letter-spacing: 0.15em;
+    letter-spacing: 0.16em;
+  }
+
+  .work-card {
+    flex: 0 0 clamp(280px, 75vw, 360px);
+    height: clamp(320px, 42vh, 400px);
+    padding: 24px;
+  }
+
+  .cards-container {
+    padding-right: 20vw;
+  }
+
+  .card-title {
+    font-size: clamp(42px, 8vw, 65px);
+  }
+}
+
+/* --- Mobile phones --- */
+@media (max-width: 480px) {
+  .work-page {
+    padding: 40px 18px;
+  }
+
+  .work-header .header-title {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .work-card {
+    flex: 0 0 calc(100vw - 56px);
+    height: clamp(300px, 60vw, 380px);
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .cards-container {
+    gap: 16px;
+    padding: 3vh 0;
+    padding-right: 18px;
+  }
+
+  .card-title {
+    font-size: clamp(38px, 10vw, 56px);
+    margin: 1vh 0;
+  }
+
+  .card-description {
+    font-size: 12px;
   }
 }

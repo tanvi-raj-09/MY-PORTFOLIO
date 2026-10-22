@@ -139,14 +139,70 @@
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
-@media (max-width: 600px) {
+/* --- Tablet --- */
+@media (max-width: 900px) {
   .about-page {
-    padding: 30px 24px;
+    height: auto;
+    min-height: 100svh;
+    padding: 4vh 5vw 3vh;
+    overflow: visible;
   }
 
   .manifesto-row {
-    font-size: clamp(58px, 8.5vh, 95px);
+    font-size: clamp(80px, 13.5vw, 140px);
+    height: auto;
+    min-height: 0.85em;
+  }
+
+  .description {
+    max-width: 560px;
+    margin-bottom: clamp(28px, 5vh, 60px);
+  }
+}
+
+/* --- Small tablet / large phone --- */
+@media (max-width: 680px) {
+  .about-page {
+    padding: 32px 24px 28px;
+  }
+
+  .manifesto-row {
+    font-size: clamp(58px, 12vw, 90px);
+  }
+
+  .description {
+    font-size: clamp(11px, 2.8vw, 14px);
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+}
+
+/* --- Mobile phones --- */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 28px 18px 24px;
+  }
+
+  .manifesto {
+    font-size: clamp(10px, 2.8vw, 13px);
+    letter-spacing: 0.18em;
+  }
+
+  .manifesto-content {
+    gap: 0.5vh;
+    margin: 1vh 0;
+  }
+
+  .manifesto-row {
+    font-size: clamp(42px, 13vw, 65px);
+    height: auto;
+  }
+
+  .description {
+    font-size: 11px;
+    line-height: 1.7;
+    margin-bottom: 16px;
   }
 }

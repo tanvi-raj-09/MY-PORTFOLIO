@@ -207,37 +207,95 @@
 
 /* ---------------- RESPONSIVE ---------------- */
 
+/* --- Tablet (portrait landscape) --- */
 @media (max-width: 900px) {
   .hero {
     height: auto;
+    min-height: 100svh;
     max-height: none;
-    overflow: auto;
-    padding: 16px;
+    overflow: visible;
+    padding: clamp(12px, 2.5vw, 24px) clamp(16px, 3.5vw, 36px);
   }
 
   .hero-container,
   .heroContainer {
     height: auto;
-    gap: 12px;
+    gap: 10px;
   }
 
   .hero-header,
   .heroHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 12px;
   }
 
   .designer-name,
   .name {
-    padding-bottom: 0;
+    font-size: clamp(5.5rem, 11vw, 8rem);
+    padding-bottom: 2px;
   }
 
   .hero-meta,
   .topBar {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 6px 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 12px;
+    padding: 10px 0 4px;
+  }
+
+  .hero-meta p:nth-child(2),
+  .topBar p:nth-child(2) {
+    text-align: left;
+  }
+
+  .hero-meta p:nth-child(3),
+  .hero-meta p:last-child,
+  .topBar p:nth-child(3),
+  .topBar p:last-child {
+    text-align: right;
+  }
+
+  .hero-text,
+  .headline {
+    font-size: clamp(3.8rem, 8.5vw, 6.5rem);
+    padding-bottom: clamp(4px, 0.8vh, 8px);
+  }
+
+  .row-one {
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+  }
+
+  .floating-card,
+  .card {
+    width: clamp(150px, 18vw, 210px);
+    height: clamp(65px, 8.5vh, 82px);
+    border-radius: 0 0 22px 0;
+    margin-bottom: 4px;
+  }
+}
+
+/* --- Small tablet / large phone (landscape) --- */
+@media (max-width: 680px) {
+  .hero {
+    padding: 14px 18px;
+  }
+
+  .hero-container,
+  .heroContainer {
+    gap: 8px;
+  }
+
+  .designer-name,
+  .name {
+    font-size: clamp(3.8rem, 12vw, 5.5rem);
+  }
+
+  .hero-meta,
+  .topBar {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+    padding: 8px 0 4px;
   }
 
   .hero-meta p,
@@ -251,6 +309,12 @@
     text-align: left;
   }
 
+  .hero-text,
+  .headline {
+    font-size: clamp(2.8rem, 9vw, 4.5rem);
+    padding-bottom: 2px;
+  }
+
   .row-one,
   .row-two,
   .row-three,
@@ -258,15 +322,9 @@
   .row.split,
   .row.contact-row {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 12px 0;
-    align-items: stretch;
-  }
-
-  .hero-text,
-  .headline {
-    padding-bottom: 0;
-    text-align: left;
+    gap: 10px;
+    padding: 10px 0;
+    align-items: flex-start;
   }
 
   .right,
@@ -275,11 +333,69 @@
     text-align: left;
   }
 
+  .contact-slot {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
   .floating-card,
   .card {
-    width: 180px;
-    height: 68px;
-    border-radius: 0 0 22px 0;
-    margin-bottom: 4px;
+    width: clamp(140px, 42vw, 180px);
+    height: 62px;
+    border-radius: 0 0 18px 0;
+    margin-bottom: 0;
+  }
+}
+
+/* --- Mobile phones --- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 12px 16px;
+  }
+
+  .hero-header,
+  .heroHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .designer-name,
+  .name {
+    font-size: clamp(3.2rem, 14vw, 4.8rem);
+    line-height: 0.82;
+  }
+
+  .hero-meta,
+  .topBar {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 6px 0 2px;
+  }
+
+  .hero-meta p,
+  .hero-meta p:nth-child(2),
+  .hero-meta p:nth-child(3),
+  .hero-meta p:last-child,
+  .topBar p,
+  .topBar p:nth-child(2),
+  .topBar p:nth-child(3),
+  .topBar p:last-child {
+    text-align: left;
+  }
+
+  .hero-text,
+  .headline {
+    font-size: clamp(2.2rem, 10vw, 3.4rem);
+    padding-bottom: 0;
+  }
+
+  .floating-card,
+  .card {
+    width: clamp(130px, 40vw, 160px);
+    height: 58px;
+    font-size: 9px;
+    border-radius: 0 0 16px 0;
+    padding: 8px 10px;
   }
 }
