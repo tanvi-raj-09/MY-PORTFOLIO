@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@400;500&display=swap");
+
+/* =========================
+   WORK SECTION
+========================= */
+.work-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #fbf7f0;
+  /* Warm off-white/beige background */
+  color: #111111;
+  padding: 8vh 6vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   WORK HEADER
+========================= */
+.work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5vh;
+}
+
+.work-header .header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.work-header .header-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(14px, 1.2vw, 18px);
+  color: #111111;
+  margin-top: 5px;
+}
+
+.work-header .header-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(55px, 6vw, 95px);
+  line-height: 0.85;
+  font-weight: 400;
+  margin: 0;
+  color: #111111;
+}
+
+.work-header .header-label {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(11px, 0.9vw, 13px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #8c8375;
+}
+
+/* =========================
+   CARDS CONTAINER (Horizontal Scroll)
+========================= */
+.cards-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4vh 0;
+  /* Add right padding to allow the last card to scroll to the left edge of the screen */
+  padding-right: 60vw;
+  flex: 1;
+  align-items: center;
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
+/* =========================
+   WORK CARD
+========================= */
+.work-card {
+  flex: 0 0 clamp(350px, 32vw, 480px);
+  height: clamp(380px, 46vh, 480px);
+  border: 1.5px solid #111111;
+  border-radius: 24px;
+  padding: 35px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: start;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #111111;
+  cursor: pointer;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Card content */
+.card-header {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(11px, 0.95vw, 13px);
+  color: #111111;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header .card-arrow {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+.work-card:hover .card-arrow {
+  transform: translate(3px, -3px);
+}
+
+.card-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(50px, 4.5vw, 76px);
+  line-height: 0.85;
+  font-weight: 400;
+  margin: 1.5vh 0;
+  color: #111111;
+}
+
+.card-description {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.8;
+  color: #111111;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.card-divider {
+  width: 100%;
+  border-top: 1.5px dashed #111111;
+  margin: 2vh 0;
+}
+
+.card-footer {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(11px, 0.9vw, 13px);
+  color: #111111;
+  text-transform: uppercase;
+}
+
+/* Specific Card Colors */
+.work-card.lime {
+  background: #d8f12a;
+  /* Lime yellow */
+}
+
+.work-card.green {
+  background: #90e882;
+  /* Mint green */
+}
+
+.work-card.yellow {
+  background: #ffd13b;
+  /* Golden yellow */
+}
+
+/* =========================
+   INDICATOR DOTS
+========================= */
+.dots-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 2vh;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid #111111;
+  background: transparent;
+  display: inline-block;
+}
+
+.dot.active {
+  background: #111111;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 1024px) {
+  .work-page {
+    padding: 6vh 5vw;
+  }
+
+  .work-card {
+    flex: 0 0 clamp(320px, 45vw, 420px);
+    height: clamp(360px, 42vh, 440px);
+  }
+}
+
+@media (max-width: 768px) {
+  .work-card {
+    flex: 0 0 clamp(290px, 70vw, 360px);
+    height: clamp(340px, 40vh, 400px);
+    padding: 25px;
+  }
+
+  .cards-container {
+    padding-right: 40vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-page {
+    padding: 40px 24px;
+  }
+
+  .work-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .work-header .header-label {
+    letter-spacing: 0.15em;
+  }
+}

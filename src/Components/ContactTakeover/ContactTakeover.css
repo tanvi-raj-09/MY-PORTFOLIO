@@ -1,0 +1,49 @@
+/* ========================================================
+   GSAP SCROLL-DRIVEN TAKEOVER TRANSITION
+   ======================================================== */
+.contact-takeover-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #fbf7f0;
+}
+
+/* The outgoing current section (Process) */
+.takeover-current-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform-origin: center 40%;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* The incoming next section (Contact) */
+.takeover-next-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  will-change: transform;
+  overflow: hidden;
+  background: #0b0d09;
+}
+
+@media (max-width: 768px) {
+  .contact-takeover-container {
+    height: 100vh;
+    height: 100svh;
+  }
+  .takeover-current-panel,
+  .takeover-next-panel {
+    height: 100vh;
+    height: 100svh;
+  }
+}

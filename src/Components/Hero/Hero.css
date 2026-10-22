@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600&display=swap");
+
+.hero {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: #b5b6a7;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  padding: clamp(6px, 1.2vh, 12px) clamp(20px, 4vw, 54px);
+  box-sizing: border-box;
+}
+
+.hero-container,
+.heroContainer {
+  width: 100%;
+  height: 100%;
+  max-width: 1550px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.hero-header,
+.heroHeader {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+.designer-name,
+.name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(7.6rem, 13vh, 10.5rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+  color: #111;
+  margin: 0;
+  padding-bottom: 2px;
+}
+
+.designer-name.italic,
+.name.right {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ---------------- META (RIGHT BELOW LINE) ---------------- */
+
+.hero-meta,
+.topBar {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px 0 6px 0;
+  margin: 0;
+  gap: 12px;
+}
+
+.hero-meta p,
+.topBar p {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(9px, 0.7vw, 10.5px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #111;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.hero-meta p:nth-child(2),
+.hero-meta p:nth-child(3),
+.topBar p:nth-child(2),
+.topBar p:nth-child(3) {
+  text-align: center;
+}
+
+.hero-meta p:last-child,
+.topBar p:last-child {
+  text-align: right;
+}
+
+/* ---------------- LINES / DIVIDERS ---------------- */
+
+.divider,
+.line {
+  flex: 0 0 2px;
+  width: 100%;
+  height: 2px;
+  background: #111;
+}
+
+/* ---------------- ROWS (EXPAND EQUALLY TO FILL HEIGHT) ---------------- */
+
+.hero-row,
+.row {
+  flex: 1 1 0%;
+  display: grid;
+  align-items: end;
+  width: 100%;
+}
+
+.row-one {
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 24px;
+}
+
+.row-two,
+.row.split {
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+}
+
+.row-three,
+.row.contact-row {
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 24px;
+}
+
+.contact-slot {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* ---------------- HEADLINE TYPOGRAPHY (INCREASED SIZE, RESTS RIGHT ON LINE) ---------------- */
+
+.hero-text,
+.headline {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(4.8rem, 10.2vh, 8.6rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  color: #111;
+  margin: 0;
+  padding-bottom: clamp(6px, 1vh, 10px);
+}
+
+.center {
+  text-align: center;
+}
+
+.right,
+.alignRight {
+  text-align: right;
+}
+
+/* ---------------- CARDS / TAGS (SLIGHTLY REDUCED HEIGHT & FLOATING ABOVE LINE) ---------------- */
+
+.floating-card,
+.card {
+  width: clamp(180px, 13.5vw, 25px);
+  height: clamp(75px, 9.8vh, 90px);
+  padding: 12px 14px;
+  border: 2px solid #111;
+  border-radius: 0 0 clamp(20px, 2.5vw, 32px) 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(10px, 0.75vw, 11.5px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+  /* Pushed slightly above the line */
+}
+
+.floating-card:hover,
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.about {
+  background: #f9f6f0;
+  color: #111;
+}
+
+.projects,
+.project {
+  background: #ff4330;
+  color: #111;
+}
+
+.contact {
+  background: #ffaa08;
+  color: #111;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    max-height: none;
+    overflow: auto;
+    padding: 16px;
+  }
+
+  .hero-container,
+  .heroContainer {
+    height: auto;
+    gap: 12px;
+  }
+
+  .hero-header,
+  .heroHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .designer-name,
+  .name {
+    padding-bottom: 0;
+  }
+
+  .hero-meta,
+  .topBar {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 6px 0;
+  }
+
+  .hero-meta p,
+  .hero-meta p:nth-child(2),
+  .hero-meta p:nth-child(3),
+  .hero-meta p:last-child,
+  .topBar p,
+  .topBar p:nth-child(2),
+  .topBar p:nth-child(3),
+  .topBar p:last-child {
+    text-align: left;
+  }
+
+  .row-one,
+  .row-two,
+  .row-three,
+  .row,
+  .row.split,
+  .row.contact-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    align-items: stretch;
+  }
+
+  .hero-text,
+  .headline {
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  .right,
+  .alignRight,
+  .center {
+    text-align: left;
+  }
+
+  .floating-card,
+  .card {
+    width: 180px;
+    height: 68px;
+    border-radius: 0 0 22px 0;
+    margin-bottom: 4px;
+  }
+}

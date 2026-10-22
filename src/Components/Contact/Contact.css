@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+.contact-page {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0b0d09; /* Consistent dark background */
+  color: #f2ede4; /* Light text for readability */
+  position: relative;
+}
+
+/* =========================
+   TOP BANNER (Dark Theme)
+   ========================= */
+.contact-banner {
+  flex: 1.1;
+  padding: 6vh 8vw 2vh 8vw; /* Shifted text inwards with more horizontal padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.banner-sub {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(12px, 1.05vw, 15px);
+  color: #78806f; /* Muted olive-gray */
+  letter-spacing: 0.15em;
+  padding-left: 5px; /* Aligns with the big text start */
+}
+
+.write-me-btn {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(55px, 11vw, 175px); /* Significantly increased font size */
+  color: #d8f12a; /* Vibrant lime-yellow */
+  text-decoration: none;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 36px); /* Space between text and long arrow */
+  transition: color 0.3s ease;
+}
+
+.arrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(60px, 10vw, 160px); /* Much wider width to scale the long arrow */
+  height: clamp(30px, 5vw, 80px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arrow-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.write-me-btn:hover {
+  color: #ffffff;
+}
+
+.write-me-btn:hover .arrow-wrapper {
+  transform: translateX(15px);
+}
+
+/* =========================
+   INFO SECTION (Dark Theme)
+   ========================= */
+.contact-info-section {
+  flex: 1;
+  background: #0b0d09; /* Matches the banner */
+  padding: 1vh 8vw 3vh 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dashed-divider {
+  width: 100%;
+  border-top: 1.5px dashed #2c3525; /* Dark olive dashed line */
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 25px;
+  border-right: 1.5px solid #1c2217; /* Dark vertical separators */
+  gap: 8px;
+}
+
+.grid-col:first-child {
+  padding-left: 0;
+}
+
+.grid-col:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.col-icon {
+  color: #f2ede4;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.col-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.col-label {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #f2ede4;
+  margin: 0;
+  padding-top: 2px;
+  transition: color 0.2s ease;
+}
+
+.col-value {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(11px, 0.85vw, 13px);
+  color: #78806f;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.grid-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.grid-link:hover .col-value {
+  color: #d8f12a; /* Highlights to lime on hover */
+}
+
+.grid-link:hover .col-icon {
+  color: #d8f12a;
+  transform: translateY(-2px);
+}
+
+.grid-link:hover .col-label {
+  color: #ffffff;
+}
+
+.col-value:hover {
+  color: #d8f12a; /* Highlights to lime on hover */
+}
+
+.static-text {
+  color: #78806f;
+}
+
+/* =========================
+   STATUS DYNAMIC PULSE
+   ========================= */
+.pulse-container {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #39b54a;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.pulse-dot::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   FOOTER AESTHETICS
+   ========================= */
+.contact-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1c2217;
+  padding-top: 15px;
+  margin-top: 5px;
+}
+
+.footer-item {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #5c6356;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #d8f12a;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+@media (max-width: 1024px) {
+  .contact-page {
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  .grid-col {
+    padding: 5px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  .contact-banner {
+    padding-top: 4vh;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .contact-info-section {
+    padding: 1vh 6vw 3vh 6vw;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 0;
+  }
+
+  .grid-col:nth-child(2) {
+    border-right: none;
+  }
+
+  .grid-col:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .grid-col:nth-child(4) {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .grid-col {
+    width: 100%;
+    border-right: none;
+    padding: 0;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

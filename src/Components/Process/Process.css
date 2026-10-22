@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@400;500&display=swap");
+
+/* =========================
+   PROCESS SECTION
+========================= */
+.process-page {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: #fbf7f0;
+  /* Warm off-white/beige background */
+  color: #111111;
+  padding: 7vh 6vw 5vh 6vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   PROCESS HEADER
+========================= */
+.process-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2vh;
+}
+
+.process-header .header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.process-header .header-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(14px, 1.2vw, 18px);
+  color: #111111;
+  margin-top: 5px;
+}
+
+.process-header .header-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(55px, 6vw, 95px);
+  line-height: 0.85;
+  font-weight: 400;
+  margin: 0;
+  color: #111111;
+}
+
+.process-header .header-label {
+  font-family: "Fira Code", monospace;
+  font-size: clamp(11px, 0.9vw, 13px);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #8c8375;
+}
+
+/* =========================
+   DIVIDER LINE
+========================= */
+.process-page .divider-line {
+  width: 100%;
+  border-top: 1.5px dashed #b5c4ad;
+  /* Olive dashed line */
+  margin: 0;
+}
+
+/* =========================
+   PROCESS CONTAINER & CONNECTORS
+========================= */
+.process-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 2vh 0;
+}
+
+.steps-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Horizontal dotted line running behind circles - locked relative to steps-wrapper */
+.connector-line {
+  position: absolute;
+  top: 75px;
+  /* Half of circle height (150px / 2) */
+  left: 5%;
+  right: 5%;
+  height: 0;
+  border-top: 1.5px dashed #b5c4ad;
+  z-index: 1;
+}
+
+/* =========================
+   STEP NODE & CIRCLES
+========================= */
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 22%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.step-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #111111;
+  /* Thick black border */
+  background: #fbf7f0;
+  /* Match background color to cover the connector line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(45px, 4vw, 65px);
+  color: #111111;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+  padding-top: 5px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+/* Yellow color comes only on hover, and circle increases size a bit */
+.step-node:hover .step-circle,
+.step-circle:hover {
+  background: #d8f12a;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(216, 241, 42, 0.65), 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.step-node:hover .step-title {
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Step text content */
+.step-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(24px, 2vw, 32px);
+  line-height: 1;
+  font-weight: 400;
+  margin: 10px 0;
+  color: #111111;
+}
+
+.step-description {
+  max-width: 220px;
+  font-family: "Fira Code", monospace;
+  font-size: clamp(12px, 0.9vw, 13px);
+  line-height: 1.8;
+  color: #6e6557;
+  margin: 0;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 1024px) {
+  .process-page {
+    height: 100%;
+    min-height: 100vh;
+    padding: 6vh 5vw;
+  }
+
+  .step-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .connector-line {
+    top: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-page {
+    height: 100%;
+    min-height: 100vh;
+    padding: 5vh 5vw 4vh 5vw;
+  }
+
+  .connector-line {
+    display: none;
+  }
+
+  .steps-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+    width: 100%;
+  }
+
+  .step-node {
+    width: 100%;
+  }
+
+  .step-circle {
+    width: 75px;
+    height: 75px;
+    font-size: 30px;
+    border-width: 3px;
+    margin-bottom: 8px;
+  }
+
+  .step-title {
+    font-size: 18px;
+    margin: 4px 0;
+  }
+
+  .step-description {
+    font-size: 10.5px;
+    line-height: 1.4;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-page {
+    padding: 4vh 4vw;
+  }
+
+  .process-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 1vh;
+  }
+
+  .process-header .header-label {
+    letter-spacing: 0.15em;
+  }
+}
